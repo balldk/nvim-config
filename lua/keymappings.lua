@@ -22,10 +22,13 @@ map("i", "jk", "<ESC>", opts)
 map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
 
+-- paste without losing copied
+map("x", "<leader>p", "\"_dP", opts)
+
 -- else
 map("n", "<leader>q", ":qa<CR>", opts)
 map("n", "<leader>w", ":wa<CR>", opts)
-map("i", "<C-s>", ":w", opts)
+-- map("i", "<C-s>", ":w", opts)
 map("n", "<leader>h", ":noh<CR>", opts)
 map('n', '<leader>t', ':lua NTGlobal["terminal"]:toggle()<cr>a', opts)
 map("t", '<ESC>', '<C-\\><C-n>', opts)

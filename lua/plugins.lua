@@ -18,8 +18,8 @@ return require('packer').startup(function(use)
     use 'nvim-lua/plenary.nvim'
 
     -- Theme
-    -- use 'navarasu/onedark.nvim'
-    -- use 'olimorris/onedarkpro.nvim'
+    use 'navarasu/onedark.nvim'
+    use 'olimorris/onedarkpro.nvim'
     use 'Yagua/nebulous.nvim'
     use 'folke/tokyonight.nvim'
 
@@ -56,6 +56,9 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-vsnip'
     use 'hrsh7th/vim-vsnip'
     use 'onsails/lspkind-nvim'
+
+    -- Others
+    use 'manzeloth/live-server'
 
     if packer_bootstrap then
         require('packer').sync()

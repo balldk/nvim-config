@@ -1,7 +1,7 @@
 local cmd = vim.cmd
 
 -- require('onedarkpro').load()
-require("nebulous").setup {
+require("nebulous").setup({
     variant = "night",
     disable = {
         background = true,
@@ -10,8 +10,7 @@ require("nebulous").setup {
     custom_colors = {
         CursorLineNr = { fg = "#fe1fa6", bg = "NONE", style = "NONE" },
         htmlBold = { fg= "#b20b53" },
-        StatusLine = {bg = 'NONE'}
+        StatusLine = { bg = 'NONE' }
     }
-}
-
+})
 

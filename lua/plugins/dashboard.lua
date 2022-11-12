@@ -1,6 +1,8 @@
 local g = vim.g
+local db = require('dashboard')
+local home = os.getenv('HOME')
 
-g.dashboard_custom_header = {
+db.custom_header = {
     [[                 (             )                                  ]],
     [[                 `--(_   _)--'                                    ]],
     [[                     y-y                                          ]],
@@ -16,32 +18,38 @@ g.dashboard_custom_header = {
     [[     ╚═════╝ ╚═╝  ╚═╝    ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝╚═╝╚═╝]],
 }
 
-g.dashboard_custom_section = {
-    a = {
-        description = {'  Recently Used Files'},
-        command = 'Telescope oldfiles'
+db.custom_center = {
+    {
+        icon = '  ',
+        desc = 'Recently Used Files        ',
+        action = 'Telescope oldfiles',
+        shortcut = '_____',
     },
-    b = {
-        description = {'  Find File          '},
-        command = 'Telescope find_files'
+    {
+        icon = '  ',
+        desc = 'Find File                  ',
+        action = 'Telescope find_files find_command=rg,--hidden,--files',
+        shortcut = 'SPC f',
     },
-    -- c  = {
-    --     description = {'  Load Last Session  '},
-    --     command = 'SessionLoad'
-    -- },
-    d = {
-        description = {'  Find Word          '},
-        command = 'Telescope live_grep'
+    {
+        icon = '  ',
+        desc = 'File Word                  ',
+        action = 'Telescope live_grep',
+        shortcut = 'SPC v',
     },
-    e = {
-        description = {'  Settings           '},
-        command = ':e ~/.config/nvim/lua/settings.lua'
+    {
+        icon = '  ',
+        desc = 'Settings                   ',
+        action = ':e ~/.config/nvim/lua/settings.lua',
+        shortcut = '_____',
     },
-    f = {
-        description = {'  Neovim Config Files'},
-        command = 'lua require(\'telescope.builtin\').find_files({search_dirs = {"~/.config/nvim"}})'
+    {
+        icon = '  ',
+        desc = 'Neovim Config Files        ',
+        action = 'lua require(\'telescope.builtin\').find_files({search_dirs = {"~/.config/nvim"}})',
+        shortcut = '_____',
     },
-    -- e = {description = {'  Marks              '}, command = 'Telescope marks'}
 }
 
-g.dashboard_custom_footer = {[[💊 Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh]]}
+db.custom_footer = {[[💊 Sản phẩm này không phải là thuốc và không có tác dụng thay thế thuốc chữa bệnh]]}
+
